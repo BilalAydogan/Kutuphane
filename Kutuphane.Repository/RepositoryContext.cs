@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Kutuphane.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +14,12 @@ namespace Kutuphane.Repository
         {
 
         }
-        /*public DbSet<Kategori> Kategoriler { get; set; }
+        public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Rol> Roller { get; set; }
-        public DbSet<KategoriAnaSayfa> AnaSayfaKategoriler { get; set; }
-        public DbSet<KategoriOzellikGrup> KategoriOzelliklerGrup { get; set; }
-        public DbSet<Ozellik> Ozellikler { get; set; }
-        public DbSet<OzellikGrup> OzellikGrup { get; set; }
-        public DbSet<Urun> Urunler { get; set; }
-        public DbSet<UrunFoto> UrunFotolar { get; set; }
-        public DbSet<UrunKategori> UrunKategorileri { get; set; }
-        public DbSet<UrunOzellik> UrunOzellikleri { get; set; }
-        public DbSet<Yorum> Yorumlar { get; set; }*/
+        public DbSet<Kiralama> Kiralamalar { get; set; }
+        public DbSet<Kitap> Kitaplar { get; set; }
+        public DbSet<KitapKategori> KitapKategorileri { get; set; }
+        public DbSet<Yazar> Yazarlar { get; set; }
     }
 }

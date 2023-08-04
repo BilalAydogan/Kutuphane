@@ -9,10 +9,13 @@ namespace Kutuphane.Repository
     public class RepositoryWrapper
     {
         private RepositoryContext context;
-        /*private KategoriRepository kategoriRepository;
+        private KategoriRepository kategoriRepository;
         private RolRepository rolRepository;
         private KullaniciRepository kullaniciRepository;
-        private UrunRepository urunRepository;
+        private KiralamaRepository kiralamaRepository;
+        private KitapRepository kitapRepository;
+        private KitapKategoriRepository kitapkategoriRepository;
+        private YazarRepository yazarRepository;
         public RepositoryWrapper(RepositoryContext context)
         {
             this.context = context;
@@ -46,20 +49,46 @@ namespace Kutuphane.Repository
 
             }
         }
-        public UrunRepository UrunRepository
+        public KiralamaRepository KiralamaRepository
         {
             get
             {
-                if (urunRepository == null)
-                    urunRepository = new UrunRepository(context);
-                return urunRepository;
-
+                if (kiralamaRepository == null)
+                    kiralamaRepository = new KiralamaRepository(context);
+                return kiralamaRepository;
+            }
+        }
+        public KitapRepository KitapRepository
+        {
+            get
+            {
+                if (kitapRepository == null)
+                    kitapRepository = new KitapRepository(context);
+                return kitapRepository;
+            }
+        }
+        public KitapKategoriRepository KitapKategoriRepository
+        {
+            get
+            {
+                if (kitapkategoriRepository == null)
+                    kitapkategoriRepository = new KitapKategoriRepository(context);
+                return kitapkategoriRepository;
+            }
+        }
+        public YazarRepository YazarRepository
+        {
+            get
+            {
+                if (yazarRepository == null)
+                    yazarRepository = new YazarRepository(context);
+                return yazarRepository;
             }
         }
 
         public void SaveChanges()
         {
             context.SaveChanges();
-        }*/
+        }
     }
 }

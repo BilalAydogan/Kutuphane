@@ -14,12 +14,14 @@ namespace Kutuphane.Model
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string Email { get; set; }
+        public string Sifre { get; set; }
         public string TelNo { get; set; }
         public int RolId { get; set; }
         public bool Aktif { get; set; }
         public DateTime KayitTarih { get; set; }
         public string Adres { get; set; }
-        public string Foto { get; set; }    
+        public string Foto { get; set; }
+        public virtual Rol Rol { get; set; }
 
     }
 }

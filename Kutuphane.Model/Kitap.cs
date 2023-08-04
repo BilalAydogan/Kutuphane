@@ -10,6 +10,10 @@ namespace Kutuphane.Model
     [Table("tblKitap")]
     public class Kitap
     {
+        public Kitap()
+        {
+            KitapKategoriler = new HashSet<KitapKategori>();
+        }
         public int Id { get; set; }
         public string Ad { get; set; }
         public int YazarId { get; set; }
@@ -17,6 +21,7 @@ namespace Kutuphane.Model
         public string ISBN { get; set; }    
         public int ToplamKopya { get; set; }
         public int KullanilabilirKopya { get; set; }
+        public virtual ICollection<KitapKategori> KitapKategoriler { get; set; }
 
     }
 }
