@@ -23,7 +23,7 @@ namespace Kutuphane.Api.Controller
             {
                 Id = json.Id,
                 Ad = json.Ad,
-                YazarId = json.YazarId,
+                Yazar = json.Yazar,
                 YayinYili = json.YayinYili,
                 ISBN = json.ISBN,
                 ToplamKopya = json.ToplamKopya,

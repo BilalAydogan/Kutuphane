@@ -16,7 +16,7 @@ namespace Kutuphane.Model
         }
         public int Id { get; set; }
         public string Ad { get; set; }
-        public int YazarId { get; set; }
+        public string Yazar { get; set; }
         public int YayinYili { get; set; }
         public string ISBN { get; set; }    
         public int ToplamKopya { get; set; }

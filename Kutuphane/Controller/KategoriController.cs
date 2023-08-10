@@ -9,31 +9,48 @@ namespace Kutuphane.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class YazarController : BaseController
+    public class KategoriController : BaseController
     {
-        public YazarController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
+        public KategoriController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
         }
+        
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
             dynamic json = JObject.Parse(model.GetRawText());
 
-            Yazar item = new Yazar()
+            Kategori item = new Kategori()
             {
                 Id = json.Id,
-                Ad = json.Ad,
-                Soyad = json.Soyad
+                Ad = json.Ad
             };
             if (item.Id > 0)
             {
-                repo.YazarRepository.Update(item);
+                repo.KategoriRepository.Update(item);
             }
             else
             {
-                repo.YazarRepository.Create(item);
+                repo.KategoriRepository.Create(item);
             }
             repo.SaveChanges();
+            return new
+            {
+                success = true
+            };
+        }
+        [HttpDelete("{id}")]
+        public dynamic Sil(int id)
+        {
+            if (id <= 0)
+            {
+                return new
+                {
+                    success = false,
+                    message = "Geçersiz id",
+                };
+            }
+            repo.RolRepository.RolSil(id);
             return new
             {
                 success = true

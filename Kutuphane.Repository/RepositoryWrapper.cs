@@ -15,7 +15,6 @@ namespace Kutuphane.Repository
         private KiralamaRepository kiralamaRepository;
         private KitapRepository kitapRepository;
         private KitapKategoriRepository kitapkategoriRepository;
-        private YazarRepository yazarRepository;
         public RepositoryWrapper(RepositoryContext context)
         {
             this.context = context;
@@ -74,15 +73,6 @@ namespace Kutuphane.Repository
                 if (kitapkategoriRepository == null)
                     kitapkategoriRepository = new KitapKategoriRepository(context);
                 return kitapkategoriRepository;
-            }
-        }
-        public YazarRepository YazarRepository
-        {
-            get
-            {
-                if (yazarRepository == null)
-                    yazarRepository = new YazarRepository(context);
-                return yazarRepository;
             }
         }
 
