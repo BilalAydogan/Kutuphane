@@ -1,27 +1,27 @@
-﻿function KitaplariGetir() {
+﻿function KiralamalariGetir() {
     $.ajax({
         type: "GET",
-        url: `${BASE_API_URI}/api/Kitap/TumKitaplar`,
+        url: `${BASE_API_URI}/api/Kiralama/TumKiralamalar`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
             if (response.success) {
 
                 var html = `<table class="table table-hover">` +
-                    `<tr><th style="width:50px">Id</th><th>Kitap Adı</th> <th>Yazar Adı</th> <th>Yayin Yili</th> 
-                    <th>ISBN</th>  <th>ToplamKopya</th> <th>KullanilabilirKopya</th> <th></th></tr>`;
+                    `<tr><th style="width:50px">Id</th><th>KitapId</th> <th>KullaniciId</th> <th>KiralamaTarih</th> 
+                    <th>BitisTarih</th>  <th>GeriVerisTarih</th> <th>İşlemler</th></tr>`;
 
                 var arr = response.data;
 
                 for (var i = 0; i < arr.length; i++) {
                     html += `<tr>`;
-                    html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].yazar}</td><td>${arr[i].yayinYili}</td><td>${arr[i].isbn}</td><td>${arr[i].toplamKopya}</td><td>${arr[i].kullanilabilirKopya}</td>`;
-                    html += `<td><i class="bi bi-trash text-danger" onclick='alert("Kitap Silme Eklenecek!");'></i><i class="bi bi-pencil-square" onclick='alert("Kitap Düzenleme Eklenecek!");'></i></td>`;
+                    html += `<td>${arr[i].id}</td><td>${arr[i].kitapId}</td><td>${arr[i].kullaniciId}</td><td>${arr[i].kiralamaTarih}</td><td>${arr[i].bitisTarih}</td><td>${arr[i].geriVerisTarih}</td>`;
+                    html += `<td><i class="bi bi-trash text-danger" onclick='alert("Kiralama Silme Eklenecek!");'></i><i class="bi bi-pencil-square" onclick='alert("Kiralama Düzenleme Eklenecek!");'></i></td>`;
                     html += `</tr>`
                 }
                 html += `</table>`;
 
-                $("#divKitaplar").html(html);
+                $("#divKiralamalar").html(html);
             }
             else {
                 alert(response.message);
@@ -32,22 +32,21 @@
         }
     });
 }
-function KitapKaydet() {
-    var kitap = {
+function KiralamaKaydet() {
+    var kiralama = {
         Id: 0,
-        Ad: $("#inputKitapAd").val(),
-        Yazar: $("#inputYazarAd").val(),
-        YayinYili: $("#inputYayinYili").val(),
-        ISBN: $("#inputISBN").val(),
-        ToplamKopya: $("#inputToplamKopya").val(),
-        KullanilabilirKopya: $("#inputKullanilabilirKopya").val()
+        KitapId: $("#inputKitapId").val(),
+        KullaniciId: $("#inputKullaniciId").val(),
+        YKiralamaTarih: $("#inputKiralamaTarih").val(),
+        BitisTarih: $("#inputBitisTarih").val(),
+        GeriVerisTarih: $("#inputGeriVerisTarih").val()
     };
     $.ajax({
         type: "POST",
         url: `${BASE_API_URI}/api/Kitap/Kaydet`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(kitap),
+        data: JSON.stringify(kiralama),
         success: function (response) {
             if (response.success) {
                 KitaplariGetir();
@@ -61,6 +60,9 @@ function KitapKaydet() {
         }
     });
 }
+
+
+
 $(document).ready(function () {
-    KitaplariGetir();
+    KiralamalariGetir();
 });

@@ -16,7 +16,7 @@ function RolleriGetir() {
                 for (var i = 0; i < arr.length; i++) {
                     html += `<tr>`;
                     html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td>`;
-                    html += `<td><i class="bi bi-trash text-danger" onclick='RolSil(${arr[i].id})'></i><i class="bi bi-pencil-square" onclick='RolDuzenle(${arr[i]})'></i></td>`;
+                    html += `<td><i class="bi bi-trash text-danger" onclick='RolSil(${arr[i].id})'></i><i class="bi bi-pencil-square" onclick="alert("Rol Düzenleme Eklenecek!");"></i></td>`;
                     html += `</tr>`
                 }
                 html += `</table>`;

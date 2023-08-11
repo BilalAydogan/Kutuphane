@@ -13,5 +13,9 @@ namespace Kutuphane.Web.Areas.Personel.Controllers
         {
             return View();
         }
+        public IActionResult Kiralama()
+        {
+            return View();
+        }
     }
 }

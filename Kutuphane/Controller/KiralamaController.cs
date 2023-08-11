@@ -14,6 +14,16 @@ namespace Kutuphane.Api.Controller
         public KiralamaController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
         }
+        [HttpGet("TumKiralamalar")]
+        public dynamic TumKiralamalar()
+        {
+            List<Kiralama> items = repo.KiralamaRepository.FindAll().ToList<Kiralama>();
+            return new
+            {
+                success = true,
+                data = items,
+            };
+        }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
@@ -25,7 +35,7 @@ namespace Kutuphane.Api.Controller
                 KitapId = json.KitapId,
                 KullaniciId = json.KullaniciId,
                 KiralamaTarih = json.KiralamaTarih,
-                BitiTarih = json.BitiTarih,
+                BitisTarih = json.BitisTarih,
                 GeriVerisTarih = json.GeriVerisTarih
             };
             if (item.Id > 0)

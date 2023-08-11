@@ -14,7 +14,7 @@ namespace Kutuphane.Model
         public int KitapId { get; set; }
         public int KullaniciId { get; set; }
         public DateTime KiralamaTarih { get; set; }
-        public DateTime BitiTarih { get; set; }
+        public DateTime BitisTarih { get; set; }
         public DateTime? GeriVerisTarih { get; set; }
     }
 }
