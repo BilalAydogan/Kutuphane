@@ -33,7 +33,7 @@
     });
 }
 function KitapKaydet() {
-    var rol = {
+    var kitap = {
         Id: 0,
         Ad: $("#inputKitapAd").val(),
         Yazar: $("#inputYazarAd").val(),
@@ -47,7 +47,7 @@ function KitapKaydet() {
         url: `${BASE_API_URI}/api/Kitap/Kaydet`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(rol),
+        data: JSON.stringify(kitap),
         success: function (response) {
             if (response.success) {
                 KitaplariGetir();
