@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace Kutuphane.Api.Controller
 {
@@ -13,6 +14,16 @@ namespace Kutuphane.Api.Controller
     {
         public KitapController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
+        }
+        [HttpGet("TumKitaplar")]
+        public dynamic TumKitaplar()
+        {
+            List<Kitap> items = repo.KitapRepository.FindAll().ToList<Kitap>();
+            return new
+            {
+                success = true,
+                data = items,
+            };
         }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)

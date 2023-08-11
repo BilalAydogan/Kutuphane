@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h2>Kitaplar</h2>
+
+<div id="divKitaplar"></div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rolModal">
+    Yeni Kitap Ekle
+</button>
+
+
+<div class="modal fade" id="rolModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Kitap Bilgileri</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <label for="inputRolAd" class="form-label">Kitap Adı</label>
+                <input type="text" id="inputKitapAd" class="form-control">
+
+                <label for="inputYazarAd" class="form-label">Yazar Adı</label>
+                <input type="text" id="inputYazarAd" class="form-control">
+
+                <label for="inputYayinYili" class="form-label">Yayın Yılı</label>
+                <input type="text" id="inputYayinYili" class="form-control">
+
+                <label for="inputISBN" class="form-label">ISBN</label>
+                <input type="text" id="inputISBN" class="form-control">
+
+                <label for="inputToplamKopya" class="form-label">Toplam Kopya</label>
+                <input type="text" id="inputToplamKopya" class="form-control">
+
+                <label for="inputKullanilabilirKopya" class="form-label">Kullanılabilir Kopya</label>
+                <input type="text" id="inputKullanilabilirKopya" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-primary" onclick="KitapKaydet()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/personel/kitap.js" asp-append-version="true"></script>
