@@ -1,13 +1,14 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
 <h2>Kiralama Oluştur</h2>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rolModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kiralamaModal">
     Yeni Kiralama Oluştur
 </button>
 <div id="divKiralamalar"></div>
-<div class="modal fade" id="rolModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="kiralamaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -27,6 +28,9 @@
 
                 <label for="inputBitisTarih" class="form-label">Kiralama Bitis Tarihi</label>
                 <input type="text" id="inputBitisTarih" class="form-control">
+
+                <label for="inputBitisTarih" class="form-label">Geri Veris Tarihi</label>
+                <input type="text" id="inputGeriVerisTarih" class="form-control">
 
                 <input type="hidden" id="inputGeriVerisTarih" class="form-control" value="">
             </div>

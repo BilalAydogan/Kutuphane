@@ -67,7 +67,7 @@ namespace Kutuphane.Api.Controller
             };
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Sil")]
         public dynamic Sil(int id)
         {
             if (id <= 0)
@@ -75,14 +75,16 @@ namespace Kutuphane.Api.Controller
                 return new
                 {
                     success = false,
-                    message = "Geçersiz id",
+                    message = "Geçersiz id"
                 };
             }
+
             repo.RolRepository.RolSil(id);
             return new
             {
                 success = true
             };
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Kutuphane.Api.Controller
         public KategoriController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
         }
-        
+
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
@@ -39,7 +39,7 @@ namespace Kutuphane.Api.Controller
                 success = true
             };
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("Sil")]
         public dynamic Sil(int id)
         {
             if (id <= 0)
@@ -47,14 +47,16 @@ namespace Kutuphane.Api.Controller
                 return new
                 {
                     success = false,
-                    message = "Geçersiz id",
+                    message = "Geçersiz id"
                 };
             }
+
             repo.RolRepository.RolSil(id);
             return new
             {
                 success = true
             };
+
         }
     }
 }

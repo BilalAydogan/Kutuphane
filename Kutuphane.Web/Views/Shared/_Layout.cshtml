@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] - Kutuphane.Web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer">
+    </script>
     <link rel="stylesheet" href="~/Kutuphane.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -33,12 +38,15 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+
+        
     </div>
 
     <footer class="border-top footer text-muted">
