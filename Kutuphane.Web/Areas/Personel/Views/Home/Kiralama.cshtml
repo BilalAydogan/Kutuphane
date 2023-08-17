@@ -7,31 +7,22 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kiralamaModal">
     Yeni Kiralama Oluştur
 </button>
-<div id="divKiralamalar"></div>
+<div id="divKiralamaOzet"></div>
 <div class="modal fade" id="kiralamaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Kitap Bilgileri</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Kiralama Oluştur</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
-                <label for="inputKitapId" class="form-label">KitapId</label>
-                <input type="text" id="inputKitapId" class="form-control">
-
-                <label for="inputKullaniciId" class="form-label">KullaniciId</label>
-                <input type="text" id="inputKullaniciId" class="form-control">
-
-                <label for="inputKiralamaTarih" class="form-label">Kiralama Başlangıç Tarihi</label>
-                <input type="text" id="inputKiralamaTarih" class="form-control">
-
-                <label for="inputBitisTarih" class="form-label">Kiralama Bitis Tarihi</label>
-                <input type="text" id="inputBitisTarih" class="form-control">
-
-                <label for="inputBitisTarih" class="form-label">Geri Veris Tarihi</label>
-                <input type="text" id="inputGeriVerisTarih" class="form-control">
-
+                <select type="text" id="selectKitapId" class="form-control">
+                    <option value="" disabled selected>Kitap Seçiniz...</option>
+                </select>
+                <select type="text" id="selectKullaniciId" class="form-control">
+                    <option value="" disabled selected>Kullanıcı Seçiniz...</option>
+                </select>
                 <input type="hidden" id="inputGeriVerisTarih" class="form-control" value="">
             </div>
             <div class="modal-footer">

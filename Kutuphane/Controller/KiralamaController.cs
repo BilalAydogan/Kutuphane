@@ -1,4 +1,5 @@
 ﻿using Kutuphane.Model;
+using Kutuphane.Model.Views;
 using Kutuphane.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,16 @@ namespace Kutuphane.Api.Controller
         public dynamic TumKiralamalar()
         {
             List<Kiralama> items = repo.KiralamaRepository.FindAll().ToList<Kiralama>();
+            return new
+            {
+                success = true,
+                data = items,
+            };
+        }
+        [HttpGet("KiralamaOzet")]
+        public dynamic KiralamaOzet()
+        {
+            List<V_Kiralama> items = repo.KiralamaRepository.KiralamaOzet();
             return new
             {
                 success = true,
@@ -64,7 +75,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.RolRepository.RolSil(id);
+            repo.KiralamaRepository.KiralamaSil(id);
             return new
             {
                 success = true

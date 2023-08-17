@@ -38,6 +38,16 @@ namespace Kutuphane.Api.Controller
                 };
             }
         }
+        [HttpGet("TumKullanicilar")]
+        public dynamic TumKullanicilar()
+        {
+            List<Kullanici> items = repo.KullaniciRepository.FindAll().ToList<Kullanici>();
+            return new
+            {
+                success = true,
+                data = items,
+            };
+        }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {

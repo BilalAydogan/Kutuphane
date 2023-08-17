@@ -51,7 +51,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.RolRepository.RolSil(id);
+            repo.KiralamaRepository.KiralamaSil(id);
             return new
             {
                 success = true
