@@ -41,4 +41,44 @@
         $("#divKullanicilar").html(html);
     });
 }
-$(document).ready(function () { KullaniciGetir(); });
+function RolleriGetir() {
+    Get("Rol/TumRoller", (data) => {
+        $('#selectRolId').empty();
+        var arr = data;
+        $.each(arr, function (i, item) {
+            $('#selectRolId').append($('<option>', {
+                value: item.id,
+                text: item.ad,
+                data_tokens: item.ad
+
+            }));
+        });
+    });
+}
+function KullaniciKaydet() {
+    var kullanici = {
+        Id: 0,
+        Ad: $("#inputKullaniciAd").val(),
+        Soyad: $("#inputKullaniciSoyad").val(),
+        Email: $("#inputEmail").val(),
+        Sifre: $("#inputSifre").val(),
+        TelNo: $("#inputTelNo").val(),
+        RolId: $("#selectRolId").find(":selected").val(),
+        Aktif: $("#inputAktifMi").is(":checked"),
+        KayitTarih: moment().format(),
+        Adres: $("#inputAdres").val(),
+        Foto:null,
+    };
+    Post("Kullanici/Kaydet", kullanici, (data) => {
+        KullaniciGetir();
+        RolleriGetir();
+        $("#kullaniciModal").modal('hide');
+    });
+}
+function KullaniciSil(id) {
+    Delete(`Kullanici/Sil?id=${id}`, (data) => {
+        KullaniciGetir();
+        RolleriGetir();
+    });
+}
+$(document).ready(function () { KullaniciGetir(); RolleriGetir(); });

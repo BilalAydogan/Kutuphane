@@ -20,7 +20,7 @@ namespace Kutuphane.Model
         public bool Aktif { get; set; }
         public DateTime KayitTarih { get; set; }
         public string Adres { get; set; }
-        public string Foto { get; set; }
+        public string? Foto { get; set; }
         public virtual Rol Rol { get; set; }
 
     }
