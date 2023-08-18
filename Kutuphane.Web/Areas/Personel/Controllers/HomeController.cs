@@ -17,5 +17,9 @@ namespace Kutuphane.Web.Areas.Personel.Controllers
         {
             return View();
         }
+        public IActionResult KullaniciEkle()
+        {
+            return View();
+        }
     }
 }

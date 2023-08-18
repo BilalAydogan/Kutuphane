@@ -1,35 +1,30 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+<head>
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css" />
 
+</head>
 <h2>Kiralama Oluştur</h2>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kiralamaModal">
-    Yeni Kiralama Oluştur
-</button>
-<div id="divKiralamaOzet"></div>
-<div class="modal fade" id="kiralamaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Kiralama Oluştur</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
 
-                <select type="text" id="selectKitapId" class="form-control">
-                    <option value="" disabled selected>Kitap Seçiniz...</option>
-                </select>
-                <select type="text" id="selectKullaniciId" class="form-control">
-                    <option value="" disabled selected>Kullanıcı Seçiniz...</option>
-                </select>
-                <input type="hidden" id="inputGeriVerisTarih" class="form-control" value="">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-                <button type="button" class="btn btn-primary" onclick="KiralamaKaydet()">Kaydet</button>
-            </div>
-        </div>
-    </div>
+
+
+<body>
+    <select class="selectpicker" id="selectKitapId" data-live-search="true">
+    </select>
+    <br></br>
+    <select class="selectpicker" id="selectKullaniciId" data-live-search="true">
+    </select>
+    <br></br>
+    <button type="button" class="btn btn-primary" onclick="KiralamaKaydet()">Kaydet</button>
+    
+</body>
+<div id="divKiralamaOzet">
+
 </div>
 <script src="~/js/personel/kiralama.js" asp-append-version="true"></script>

@@ -22,5 +22,6 @@ namespace Kutuphane.Repository
         public DbSet<Kitap> Kitaplar { get; set; }
         public DbSet<KitapKategori> KitapKategorileri { get; set; }
         public DbSet<V_Kiralama> KiralamaOzet { get; set; }
+        public DbSet<V_Kullanici> KullaniciOzet { get; set; }
     }
 }
