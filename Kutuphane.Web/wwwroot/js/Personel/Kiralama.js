@@ -1,7 +1,7 @@
-﻿async function KitaplariGetir() {
-    Get("Kitap/TumKitaplar", (data) => {
+﻿ function KitaplariGetir() {
+     Get("Kitap/TumKitaplar", (data) => {
         $('#selectKitapId').empty();
-        var arr = data;
+         var arr = data;
         $.each(arr, function (i, item) {
             $('#selectKitapId').append($('<option>', {
                 value: item.id,
@@ -12,7 +12,7 @@
         });
     });
 }
-async function KullanicilariGetir() {
+ function KullanicilariGetir() {
     Get("Kullanici/TumKullanicilar", (data) => {
         $('#selectKullaniciId').empty();
         var arr = data;
@@ -68,7 +68,4 @@ function KiralamaSil(id) {
         KullanicilariGetir();
     });
 }
-$(document).ready( function () { KullanicilariGetir(); });
-$(document).ready( function () { KitaplariGetir(); });
-//$(document).ready( function () { KiralamalariGetir(); });
-$(document).ready( function () { KiralamaOzetGetir(); });
+$(document).ready(function () { KullanicilariGetir(); KitaplariGetir(); KiralamaOzetGetir(); });
