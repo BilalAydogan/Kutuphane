@@ -8,7 +8,7 @@
                     html += `<tr>`;
                     html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td>`;
                     html += `<td><i class="btn btn-danger" onclick='RolSil(${arr[i].id})'> Sil </i>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" onclick = 'RolKaydet(${arr[i].id},${arr[i].ad})'> Düzenle </button></td>`;
+                    <button type="button" style="width:100px " class="btn btn-info" data-bs-toggle="collapse" onclick = 'RolDuzenle(${arr[i].id},"${arr[i].ad}")'> Düzenle </button></td>`;
                     html += `</tr>`
                 }
                 html += `</table>`;
@@ -46,8 +46,8 @@ function RolSil(id) {
 
 function RolDuzenle(id, ad) {
     selectedRolId = id;
-    $('#inputRolAd').val(ad);
-    $("#rolModal").modal('show');
+    $("#inputRolAd").val(ad);
+    $("#rolModal").modal("show");
 }
 
 $(document).ready(function () {

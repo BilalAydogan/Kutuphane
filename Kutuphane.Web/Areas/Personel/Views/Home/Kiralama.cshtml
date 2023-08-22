@@ -48,6 +48,37 @@
 </div>
 </div>
 
+<div class="modal fade" id="duzenleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Kiralama Bilgileri</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+
+				<label for="inputKitapAdDuzenle" class="form-label">Kitap Adı</label>
+				<input type="text" id="inputKitapAdDuzenle" class="form-control">
+
+				<label for="inputKullaniciAdDuzenle" class="form-label">Kullanıcı Adı</label>
+				<input type="text" id="inputKullaniciAdDuzenle" class="form-control">
+
+				<label for="inputKiralamaTarihDuzenle" class="form-label">Kiralama Tarihi</label>
+				<input type="text" id="inputKiralamaTarihDuzenle" class="form-control">
+
+				<label for="inputBitisTarihDuzenle" class="form-label">Bitiş Tarihi</label>
+				<input type="text" id="inputBitisTarihDuzenle" class="form-control">
+
+				<label for="inputGeriVerisTarihDuzenle" class="form-label">Geri Veriş Tarihi</label>
+				<input type="text" id="inputGeriVerisTarihDuzenle" class="form-control">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+				<button type="button" class="btn btn-primary" onclick="KiralamaKaydet2()">Kaydet</button>
+			</div>
+		</div>
+	</div>
+</div>
 <h2>Tüm Kiralamalar</h2>
 <nav aria-label="Page navigation example">
 	<ul class="pagination justify-content-center">

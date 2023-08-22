@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Kutuphane.Web.Code;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -41,6 +42,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Personel" asp-controller="Home" asp-action="KullaniciEkle">Kullanıcı Ekle</a>
+                        </li>
+                        <li class="nav-item">
+
+                            @if (string.IsNullOrEmpty(Repo.Session.Email))
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger position-absolute top-0 end-0" asp-area="" asp-controller="Account" asp-action="Logout">@Repo.Session.Email <br>Logout</a>
+                            }
                         </li>
                     </ul>
                 </div>
