@@ -93,7 +93,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.RolRepository.RolSil(id);
+            repo.KullaniciRepository.KullaniciSil(id);
             return new
             {
                 success = true

@@ -163,3 +163,6 @@ button {
         .register p a:hover {
             text-decoration: underline;
         }
+.table-responsive {
+    max-height: 350px;
+}

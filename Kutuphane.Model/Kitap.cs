@@ -19,8 +19,6 @@ namespace Kutuphane.Model
         public string Yazar { get; set; }
         public int YayinYili { get; set; }
         public string ISBN { get; set; }    
-        public int ToplamKopya { get; set; }
-        public int KullanilabilirKopya { get; set; }
         public virtual ICollection<KitapKategori> KitapKategoriler { get; set; }
 
     }

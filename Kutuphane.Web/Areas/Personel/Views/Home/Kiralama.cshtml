@@ -1,58 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kiralamaModal">
-	Yeni Kiralama Oluştur
-</button>
-<div class="modal fade" id="kiralamaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h1 class="modal-title fs-5" id="exampleModalLabel">Kiralama Bilgileri</h1>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-
-
-<div class="container">
+﻿<div class="container">
 	<div class="row">
 		<form class="col-md-4">
 			<label>Kitap Seç</label>
-			<select class="form-control select2" id="selectKitapId">
-			</select>
-
+			<select class="form-control select2" id="selectKitapId"></select>
 			<label>Kullanıcı Seç</label>
-			<select class="form-control select2" id="selectKullaniciId">
-			</select>
+			<select class="form-control select2" id="selectKullaniciId"></select>
+			<button type="button" class="btn btn-primary" onclick="KiralamaKaydet()">Kaydet</button>
 		</form>
 	</div>
 </div>
 <script>
 	$('.select2').select2();
 </script>
-
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-			<button type="button" class="btn btn-primary" onclick="KiralamaKaydet()">Kaydet</button>
-		</div>
-	</div>
-</div>
-</div>
-
 <div class="modal fade" id="duzenleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel">Kiralama Bilgileri</h1>
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Teslim Et</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -74,25 +38,24 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-				<button type="button" class="btn btn-primary" onclick="KiralamaKaydet2()">Kaydet</button>
+				<button type="button" class="btn btn-primary" onclick="KiralamaKaydet2()">Teslim Et</button>
 			</div>
 		</div>
 	</div>
 </div>
 <h2>Tüm Kiralamalar</h2>
-<nav aria-label="Page navigation example">
-	<ul class="pagination justify-content-center">
-		<li class="page-item disabled">
-			<a class="page-link">Previous</a>
-		</li>
-		<li class="page-item"><a class="page-link" href="https://localhost:7245/Personel/Home/Kiralama/page=1">1</a></li>
-		<li class="page-item"><a class="page-link" href="https://localhost:7245/Personel/Home/Kiralama/page=2">2</a></li>
-		<li class="page-item"><a class="page-link" href="https://localhost:7245/Personel/Home/Kiralama/page=3">3</a></li>
-		<li class="page-item">
-			<a class="page-link" href="#">Next</a>
-		</li>
-	</ul>
-</nav>
+<script>
+	$(document).ready(function () {
+		$("#myInput").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
+<input id="myInput" type="text" placeholder="Search..">
+<br>
 <div id="divKiralamaOzet" >
 
 </div>

@@ -36,9 +36,7 @@ namespace Kutuphane.Api.Controller
                 Ad = json.Ad,
                 Yazar = json.Yazar,
                 YayinYili = json.YayinYili,
-                ISBN = json.ISBN,
-                ToplamKopya = json.ToplamKopya,
-                KullanilabilirKopya = json.KullanilabilirKopya,
+                ISBN = json.ISBN
             };
             if (item.Id > 0)
             {

@@ -1,16 +1,16 @@
 ﻿function KitaplariGetir() {
     Get("Kitap/TumKitaplar", (data) => {
-                var html = `<table class="table table-hover">` +
+        var html = `<table class="table table-hover table-responsive">` +
                     `<tr><th style="width:50px">Id</th><th>Kitap Adı</th> <th>Yazar Adı</th> <th>Yayin Yili</th> 
-                    <th>ISBN</th>  <th>ToplamKopya</th> <th>KullanilabilirKopya</th> <th>İşlemler</th></tr>`;
+                    <th>ISBN</th> <th>İşlemler</th></tr>`;
 
                 var arr = data;
 
                 for (var i = 0; i < arr.length; i++) {
                     html += `<tr>`;
-                    html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].yazar}</td><td>${arr[i].yayinYili}</td><td>${arr[i].isbn}</td><td>${arr[i].toplamKopya}</td><td>${arr[i].kullanilabilirKopya}</td>`;
+                    html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].yazar}</td><td>${arr[i].yayinYili}</td><td>${arr[i].isbn}</td>`;
                     html += `<td><i class="btn btn-danger" onclick='alert("Kitap Silme Eklenecek!");'> Sil </i>
-                    <i class="btn btn-info" onclick='KitapDuzenle(${arr[i].id},"${arr[i].ad}","${arr[i].yazar}","${arr[i].yayinYili}","${arr[i].isbn}","${arr[i].toplamKopya}","${arr[i].kullanilabilirKopya}")'> Düzenle </i></td>`;
+                    <i class="btn btn-info" onclick='KitapDuzenle(${arr[i].id},"${arr[i].ad}","${arr[i].yazar}","${arr[i].yayinYili}","${arr[i].isbn}")'> Düzenle </i></td>`;
                     html += `</tr>`
                 }
                 html += `</table>`;
@@ -24,9 +24,7 @@ function KitapKaydet() {
         Ad: $("#inputKitapAd").val(),
         Yazar: $("#inputYazarAd").val(),
         YayinYili: $("#inputYayinYili").val(),
-        ISBN: $("#inputISBN").val(),
-        ToplamKopya: $("#inputToplamKopya").val(),
-        KullanilabilirKopya: $("#inputKullanilabilirKopya").val()
+        ISBN: $("#inputISBN").val()
     };
     Post("Kitap/Kaydet", kitap, (data) => {
         KitaplariGetir();
@@ -40,14 +38,12 @@ function KitapSil(id) {
     });
 }
 
-function KitapDuzenle(id, ad, yazar, yayinYili, isbn, toplamKopya, kullanilabilirKopya) {
+function KitapDuzenle(id, ad, yazar, yayinYili, isbn) {
     selectedKitapId = id;
     $("#inputKitapAd").val(ad);
     $("#inputYazarAd").val(yazar);
     $("#inputYayinYili").val(yayinYili);
     $("#inputISBN").val(isbn);
-    $("#inputToplamKopya").val(toplamKopya);
-    $("#inputKullanilabilirKopya").val(kullanilabilirKopya);
     $("#kitapModal").modal("show");
 }
 $(document).ready(function () {

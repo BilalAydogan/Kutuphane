@@ -1,7 +1,7 @@
 ﻿function RolleriGetir() {
     Get("Rol/TumRoller", (data) => {
 
-                var html = `<table class="table table-hover">` +
+        var html = `<table class="table table-hover table-responsive">` +
                     `<tr><th style="width:50px">Id</th><th>Rol Adı</th><th></th></tr>`;
                 var arr = data;
                 for (var i = 0; i < arr.length; i++) {
