@@ -14,6 +14,16 @@ namespace Kutuphane.Api.Controller
         public KategoriController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
         }
+        [HttpGet("TumKategoriler")]
+        public dynamic TumKategoriler()
+        {
+            List<Kategori> items = repo.KategoriRepository.FindAll().ToList<Kategori>();
+            return new
+            {
+                success = true,
+                data = items,
+            };
+        }
 
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
@@ -51,7 +61,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.KiralamaRepository.KiralamaSil(id);
+            repo.KategoriRepository.KategoriSil(id);
             return new
             {
                 success = true

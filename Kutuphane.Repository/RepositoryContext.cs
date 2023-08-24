@@ -20,8 +20,8 @@ namespace Kutuphane.Repository
         public DbSet<Rol> Roller { get; set; }
         public DbSet<Kiralama> Kiralamalar { get; set; }
         public DbSet<Kitap> Kitaplar { get; set; }
-        public DbSet<KitapKategori> KitapKategorileri { get; set; }
         public DbSet<V_Kiralama> KiralamaOzet { get; set; }
         public DbSet<V_Kullanici> KullaniciOzet { get; set; }
+        public DbSet<V_Kitap> KitapOzet { get; set; }
     }
 }

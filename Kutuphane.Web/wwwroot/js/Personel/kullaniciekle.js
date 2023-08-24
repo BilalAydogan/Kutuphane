@@ -94,21 +94,22 @@ function KullaniciSil(id) {
 }
 function KullaniciKaydet2() {
     var kullanici2 = {
-        Id: 1002,
+        Id: selectedKullaniciId,
         Ad: $("#inputKullaniciAdDuzenle").val(),
         Soyad: $("#inputKullaniciSoyadDuzenle").val(),
         Email: $("#inputEmailDuzenle").val(),
         Sifre: $("#inputSifreDuzenle").val(),
         TelNo: $("#inputTelNoDuzenle").val(),
-        Rol: $("#selectRolIdDuzenle").find(":selected").val(),
+        RolId: $("#selectRolIdDuzenle").find(":selected").val(),
         Aktif: $("#inputAktifMiDuzenle").is(":checked"),
-        KayitTarih: $("#inputKayitTarihDuzenle").val(),
+        KayitTarih: moment().format(),
         Adres: $("#inputAdresDuzenle").val(),
-        Foto: null
+        Foto: null,
     };
     Post("Kullanici/Kaydet", kullanici2, (data) => {
         KullaniciGetir();
         RolleriGetir();
+        alert("Başarılı");
         $("#kullaniciduzenleModal").modal('hide');
     });
 }
@@ -122,7 +123,6 @@ function KullaniciDuzenle(id, ad, soyad, email, sifre, telNo, rol, adres, aktif,
     $("#inputRolIdDuzenle").val(rol);
     $("#inputAdresDuzenle").val(adres);
     $("#inputAktifMiDuzenle").val(aktif);
-    $("#inputKayitTarihDuzenle").val(kayitTarih);
     $("#inputFotoDuzenle").val(foto);
     $("#kullaniciduzenleModal").modal("show");
 }

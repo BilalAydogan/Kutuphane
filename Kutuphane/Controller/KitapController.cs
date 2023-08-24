@@ -1,4 +1,5 @@
 ﻿using Kutuphane.Model;
+using Kutuphane.Model.Views;
 using Kutuphane.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,16 @@ namespace Kutuphane.Api.Controller
                 data = items,
             };
         }
+        [HttpGet("KitapOzet")]
+        public dynamic KitapOzet()
+        {
+            List<V_Kitap> items = repo.KitapRepository.KitapOzet();
+            return new
+            {
+                success = true,
+                data = items,
+            };
+        }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
@@ -36,7 +47,8 @@ namespace Kutuphane.Api.Controller
                 Ad = json.Ad,
                 Yazar = json.Yazar,
                 YayinYili = json.YayinYili,
-                ISBN = json.ISBN
+                ISBN = json.ISBN,
+                KategoriId=json.KategoriId,
             };
             if (item.Id > 0)
             {
@@ -64,7 +76,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.RolRepository.RolSil(id);
+            repo.KitapRepository.KitapSil(id);
             return new
             {
                 success = true

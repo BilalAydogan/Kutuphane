@@ -13,5 +13,9 @@ namespace Kutuphane.Repository
         public KategoriRepository(RepositoryContext context) : base(context)
         {
         }
+        public void KategoriSil(int kategoriId)
+        {
+            RepositoryContext.Kategoriler.Where(k => k.Id == kategoriId).ExecuteDelete();
+        }
     }
 }

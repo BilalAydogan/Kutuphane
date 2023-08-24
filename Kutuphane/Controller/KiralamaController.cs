@@ -35,6 +35,16 @@ namespace Kutuphane.Api.Controller
                 data = items,
             };
         }
+        [HttpGet("KiralamaGetir/{id}")]
+        public dynamic AltKategoriler(int id)
+        {
+            List<Kiralama> items = repo.KiralamaRepository.FindByCondition(a => a.KullaniciId == id).ToList<Kiralama>();
+            return new
+            {
+                success = true,
+                data = items
+            };
+        }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
