@@ -1,9 +1,11 @@
 ﻿using Kutuphane.Model;
 using Kutuphane.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json.Linq;
+using System.Data;
 
 namespace Kutuphane.Api.Controller
 {
@@ -48,6 +50,7 @@ namespace Kutuphane.Api.Controller
                 data = items,
             };
         }
+        [Authorize(Roles = "Admin,Personel")]
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
@@ -81,6 +84,7 @@ namespace Kutuphane.Api.Controller
                 success = true
             };
         }
+        [Authorize(Roles = "Admin,Personel")]
         [HttpDelete("Sil")]
         public dynamic Sil(int id)
         {
