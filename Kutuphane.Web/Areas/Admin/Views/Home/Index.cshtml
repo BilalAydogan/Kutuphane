@@ -4,4 +4,10 @@
 @{
 }
 
-<h2 style="color: black"> Admin Index sayfası</h2>
+<table style="width:90%">
+    <h2 style="color:black"> Kütüphane Web Sitemizin Admin Sayfasına Hoş Geldiniz...</h2>
+    <tr>
+        <td colspan="8"><img src="img/banner.jpg" style="width:100%;"></td>
+    </tr>
+    @await Component.InvokeAsync("Kitap")
+</table>
