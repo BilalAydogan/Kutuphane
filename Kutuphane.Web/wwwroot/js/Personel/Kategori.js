@@ -7,7 +7,7 @@
         for (var i = 0; i < arr.length; i++) {
             html += `<tr>`;
             html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td>`;
-            html += `<td><i class="btn btn-danger" onclick='RolSil(${arr[i].id})'> Sil </i>
+            html += `<td><i class="btn btn-danger" onclick='KategoriSil(${arr[i].id})'> Sil </i>
                     <button type="button" style="width:100px " class="btn btn-info" data-bs-toggle="collapse" onclick = 'KategoriDuzenle(${arr[i].id},"${arr[i].ad}")'> Düzenle </button></td>`;
             html += `</tr>`
         }
@@ -39,7 +39,7 @@ function KategoriKaydet() {
 
 function KategoriSil(id) {
     Delete(`Kategori/Sil?id=${id}`, (data) => {
-        RolleriGetir();
+        KategorileriGetir();
         alert("Başarılı Bir Şekilde Silindi!!!");
     });
 }

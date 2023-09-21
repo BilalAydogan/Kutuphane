@@ -26,7 +26,6 @@ namespace Kutuphane.Api.Controller
                 data = items,
             };
         }
-        [Authorize(Roles = "Admin")]
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
@@ -51,7 +50,6 @@ namespace Kutuphane.Api.Controller
                 success = true
             };
         }
-        [Authorize(Roles = "Admin")]
         [HttpDelete("Sil")]
         public dynamic Sil(int id)
         {

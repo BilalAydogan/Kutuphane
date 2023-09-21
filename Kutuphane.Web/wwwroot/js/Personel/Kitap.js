@@ -9,7 +9,7 @@
                 for (var i = 0; i < arr.length; i++) {
                     html += `<tr>`;
                     html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].yazar}</td><td>${arr[i].yayinYili}</td><td>${arr[i].isbn}</td>`;
-                    html += `<td><i class="btn btn-danger" onclick='alert("Kitap Silme Eklenecek!");'> Sil </i>
+                    html += `<td><i class="btn btn-danger" onclick='KitapSil(${arr[i].id})'> Sil </i>
                     <i class="btn btn-info" onclick='KitapDuzenle(${arr[i].id},"${arr[i].ad}","${arr[i].yazar}","${arr[i].yayinYili}","${arr[i].isbn}")'> Düzenle </i></td>`;
                     html += `</tr>`
                 }
@@ -41,7 +41,7 @@ function KitapOzetGetir() {
         for (var i = 0; i < arr.length; i++) {
             html += `<tr>`;
             html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].yazar}</td><td>${arr[i].yayinYili}</td><td>${arr[i].isbn}</td><td>${arr[i].kategori_Ad}</td>`;
-            html += `<td><i class="btn btn-danger" onclick='alert("Kitap Silme Eklenecek!");'> Sil </i>
+            html += `<td><i class="btn btn-danger" onclick='KitapSil(${arr[i].id})'> Sil </i>
                     <i class="btn btn-info" onclick='KitapDuzenle(${arr[i].id},"${arr[i].ad}","${arr[i].yazar}","${arr[i].yayinYili}","${arr[i].isbn}")'> Düzenle </i></td>`;
             html += `</tr>`
         }
@@ -70,7 +70,8 @@ function KitapKaydet() {
 function KitapSil(id) {
     Delete(`Kitap/Sil?id=${id}`, (data) => {
         KitaplariGetir();
-        KitapOzetGetir()
+        KitapOzetGetir();
+        alert("Başarılı!!");
     });
 }
 

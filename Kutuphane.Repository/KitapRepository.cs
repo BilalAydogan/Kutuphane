@@ -20,5 +20,13 @@ namespace Kutuphane.Repository
         }
         public List<V_Kitap> KitapOzet() => RepositoryContext.KitapOzet.ToList<V_Kitap>();
 
+        public Kitap KitapById(int id)
+        {
+            Kitap kitap = (from u in RepositoryContext.Kitaplar
+                         where u.Id == id
+                         select u).SingleOrDefault<Kitap>();
+            return kitap;
+        }
+
     }
 }

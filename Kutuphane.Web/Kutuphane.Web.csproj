@@ -18,6 +18,123 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Areas\Shop\Views\Home\img\book1.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book10.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book11.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book12.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book13.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book14.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book15.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book16.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book17.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book18.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book19.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book2.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book20.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book21.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book22.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book3.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book4.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book5.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book6.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book7.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book8.jpg" />
+    <None Remove="Areas\Shop\Views\Home\img\book9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Shop\Views\Home\img\book1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book10.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book11.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book12.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book13.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book14.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book15.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book16.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book17.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book18.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book19.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book20.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book21.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book22.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book5.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book6.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book7.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book8.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Shop\Views\Home\img\book9.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Shop\Model\" />
     <Folder Include="Areas\Admin\Model\" />
     <Folder Include="Areas\Personel\Model\" />
   </ItemGroup>

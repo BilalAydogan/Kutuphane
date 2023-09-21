@@ -1,26 +1,49 @@
 ﻿using Kutuphane.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Kutuphane.Web.Code.Rest;
+using Newtonsoft.Json;
 
 namespace Kutuphane.Web.Components
 {
-    public class Kitap: ViewComponent
+    public class Kitap : ViewComponent
     {
-        
-            public IViewComponentResult Invoke()
-            {
-                List<KitapModel> oranlar = new List<KitapModel>() {
-                new KitapModel(){ head="Kitap 1",imgurl="img/book1.jpg"},
-                new KitapModel(){ head="Kitap 2",imgurl="img/book2.jpg"},
-                new KitapModel(){ head="Kitap 3",imgurl="img/book3.jpg"},
-                new KitapModel(){ head="Kitap 4",imgurl="img/book4.jpg"},
-                new KitapModel(){ head="Kitap 5",imgurl="img/book5.jpg"},
-                new KitapModel(){ head="Kitap 6",imgurl="img/book6.jpg"},
-                new KitapModel(){ head="Kitap 7",imgurl="img/book7.jpg"},
-                new KitapModel(){ head="Kitap 8",imgurl="img/book8.jpg"},
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            List<KitapModel> kitaplar = new List<KitapModel>();
 
-            };
-                return View(oranlar);
+            using (var httpClient = new HttpClient())
+            {
+                // Replace with the actual API URL
+                string apiUrl = "https://localhost:7152/api/Kitap/TumKitaplar";
+
+                // Make a GET request to the API
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Deserialize the JSON response into ApiResponse<List<KitapModel>>
+                    string content = await response.Content.ReadAsStringAsync();
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<KitapModel>>>(content);
+
+                    if (apiResponse.Success)
+                    {
+                        // Extract the data from the ApiResponse
+                        kitaplar = apiResponse.Data;
+                    }
+                    else
+                    {
+                        // Handle API response indicating failure if needed
+                    }
+                }
+                else
+                {
+                    // Handle the error if the API request is not successful
+                    // You can log the error, return an error view, etc.
+                }
             }
+
+            return View(kitaplar);
+        }
     }
     
 }

@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Newtonsoft.Json.Linq;
+
+<div class="row">
+
+    <div class="col">
+        <h2 style="color:black">@ViewBag.Kitap.ad</h2>
+        <table class="table">
+            <tr>
+                <td>Yazar Adı:</td>
+                <td>@ViewBag.Kitap.yazar</td>
+            </tr>
+            <tr>
+                <td>Yayın Yılı</td>
+                <td>@ViewBag.Kitap.yayinYili</td>
+            </tr>
+            <tr>
+                <td>ISBN</td>
+                <td>@ViewBag.Kitap.isbn</td>
+            </tr>
+            <tr>
+                <td>Foto</td>
+                <td> <img src="\img\book@{@ViewBag.Kitap.id}.jpg" alt="Kitap @ViewBag.Kitap.id" width="100" height="100"></td>
+            </tr>
+        </table>
+    </div>
+</div>

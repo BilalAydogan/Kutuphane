@@ -1,14 +1,57 @@
 ﻿@model ICollection<Kutuphane.Web.Models.KitapModel>
 
-<tr>
-    <td colspan="8" style="padding:20px 10px;"><h2 style="color:black">Bazı Kitaplar</h2></td>
-</tr>
+<style>
+.scrolling-wrapper{
+    overflow-x: auto;
+}
 
-<tr>
-    @for (int i = 0; i < Model.Count; i++) {
-    <td style="padding:5px 10px;">
-        <img src="@Model.ElementAt(i).imgurl" style="height:200px;">
-        <h4>@Model.ElementAt(i).head</h4>
-    </td>
+h1{
+    font-weight: 700;
+    font-size: 3.4em;
+}
+
+.subtitle{
+    font-size: 1.25em;
+    opacity: 0.65;
+}
+
+.card-block{
+    height: 250px;
+    width: 250px;
+    background-color: #fff;
+    border: none;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.2s ease-in-out !important;
+    border-radius: 24px;
+    &:hover{
+        transform: translateY(-5px);
+        box-shadow: none;
+        opacity: 0.9;
     }
-</tr>
+}
+
+.card-1{
+    background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+</style>
+
+<div class="container-fluid">
+    <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+        
+        <div class="col-2">
+                <a class="nav-link text-dark" asp-area="Shop" asp-controller="Home" asp-action="Detay" asp-route-id="@Model.ElementAt(i).id">
+            <div class="card card-block card-1">
+                        <img src="@Url.Content($"img/book{@Model.ElementAt(i).id}.jpg")" style="height:200px; width:200px;">
+                <h4>@Model.ElementAt(i).ad</h4>
+            </div>
+                </a>
+        </div>
+            
+        }
+    </div>
+</div>

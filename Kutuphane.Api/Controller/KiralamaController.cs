@@ -7,59 +7,67 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json.Linq;
 using System.Data;
-using System.Linq;
 
 namespace Kutuphane.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KitapController : BaseController
+    public class KiralamaController : BaseController
     {
-        public KitapController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
+        public KiralamaController(RepositoryWrapper repo, IMemoryCache cache) : base(repo, cache)
         {
         }
-        [HttpGet("TumKitaplar")]
-        public dynamic TumKitaplar()
+        [HttpGet("TumKiralamalar")]
+        public dynamic TumKiralamalar()
         {
-            List<Kitap> items = repo.KitapRepository.FindAll().ToList<Kitap>();
+            List<Kiralama> items = repo.KiralamaRepository.FindAll().ToList<Kiralama>();
             return new
             {
                 success = true,
                 data = items,
             };
         }
-        [HttpGet("KitapOzet")]
-        public dynamic KitapOzet()
+        [HttpGet("KiralamaOzet")]
+        public dynamic KiralamaOzet()
         {
-            List<V_Kitap> items = repo.KitapRepository.KitapOzet();
+            List<V_Kiralama> items = repo.KiralamaRepository.KiralamaOzet();
             return new
             {
                 success = true,
                 data = items,
             };
         }
-        [Authorize(Roles = "Admin,Personel")]
+        [HttpGet("KiralamaGetir/{id}")]
+        public dynamic AltKategoriler(int id)
+        {
+            List<Kiralama> items = repo.KiralamaRepository.FindByCondition(a => a.KullaniciId == id).ToList<Kiralama>();
+            return new
+            {
+                success = true,
+                data = items
+            };
+        }
         [HttpPost("Kaydet")]
         public dynamic Kaydet([FromBody] dynamic model)
         {
             dynamic json = JObject.Parse(model.GetRawText());
 
-            Kitap item = new Kitap()
+            Kiralama item = new Kiralama()
             {
                 Id = json.Id,
-                Ad = json.Ad,
-                Yazar = json.Yazar,
-                YayinYili = json.YayinYili,
-                ISBN = json.ISBN,
-                KategoriId=json.KategoriId,
+                KitapId = json.KitapId,
+                KullaniciId = json.KullaniciId,
+                KiralamaTarih = json.KiralamaTarih,
+                BitisTarih = json.BitisTarih,
+                GeriVerisTarih = json.GeriVerisTarih
             };
             if (item.Id > 0)
             {
-                repo.KitapRepository.Update(item);
+                repo.KiralamaRepository.Update(item);
             }
             else
             {
-                repo.KitapRepository.Create(item);
+                repo.KiralamaRepository.Create(item);
             }
             repo.SaveChanges();
             return new
@@ -67,7 +75,6 @@ namespace Kutuphane.Api.Controller
                 success = true
             };
         }
-        [Authorize(Roles = "Admin,Personel")]
         [HttpDelete("Sil")]
         public dynamic Sil(int id)
         {
@@ -80,7 +87,7 @@ namespace Kutuphane.Api.Controller
                 };
             }
 
-            repo.KitapRepository.KitapSil(id);
+            repo.KiralamaRepository.KiralamaSil(id);
             return new
             {
                 success = true
@@ -89,4 +96,3 @@ namespace Kutuphane.Api.Controller
         }
     }
 }
-

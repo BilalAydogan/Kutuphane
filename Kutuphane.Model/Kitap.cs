@@ -15,10 +15,11 @@ namespace Kutuphane.Model
         }
         public int Id { get; set; }
         public string Ad { get; set; }
-        public string Yazar { get; set; }
-        public int YayinYili { get; set; }
-        public string ISBN { get; set; }
-        public int KategoriId { get; set; }
+        public string? Yazar { get; set; }
+        public int? YayinYili { get; set; }
+        public string? ISBN { get; set; }
+        public int? KategoriId { get; set; }
+        public virtual ICollection<Kategori> KitapKategori { get; set; }
 
     }
 }

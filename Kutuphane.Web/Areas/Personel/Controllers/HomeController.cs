@@ -9,6 +9,10 @@ namespace Kutuphane.Web.Areas.Personel.Controllers
         {
             return View();
         }
+        public IActionResult Yeni()
+        {
+            return View();
+        }
         public IActionResult Kitap()
         {
             return View();

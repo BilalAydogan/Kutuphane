@@ -44,10 +44,10 @@ function KiralamaOzetGetir() {
             <td>${arr[i].geriVerisTarih}</td>`;
             var s1 = moment(arr[i].bitisTarih).startOf('day').fromNow();
             var s2 = "ago";
-            if (s1.includes("days ago")) {
+            if (s1.includes("ago") && arr[i].geriVerisTarih == null) {
                 html += `<td><i class="btn btn-danger" onclick='KiralamaSil(${arr[i].id})'>Sil</i>
             <i class="btn btn-info" onclick='KiralamaDuzenle(${arr[i].id},"${arr[i].kitapAd}","${arr[i].kullaniciAd}","${arr[i].kiralamaTarih}","${arr[i].bitisTarih}","${arr[i].geriVerisTarih}")'>Teslim Et</i>`;
-                html += '<i class="btn btn-dark">Teslim Süresi Geçmiş </i></td>';
+                html += '<i class="btn btn-dark">Süresi Geçmiş</i></td>';
             }
             else if (arr[i].geriVerisTarih == null) {
                 html += `<td><i class="btn btn-danger" onclick='KiralamaSil(${arr[i].id})'>Sil</i> 
